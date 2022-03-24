@@ -352,7 +352,7 @@
           Contact Us
         </h3>
         <div class="content">
-          <form name="contact" method="POST" data-netlify="true" action="/">
+          <form name="contact" method="post" netlify data-netlify="true" data-netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="contact">
             <b-field>
               <b-input
