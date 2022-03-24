@@ -336,6 +336,12 @@
         </div>
       </div>
     </section>
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact">
+      <input type="text" name="name">
+      <input type="email" name="email">
+      <textarea name="message" />
+    </form>
     <b-modal
       :on-cancel="toggleModal"
       :active="isComponentModalActive"
@@ -352,14 +358,14 @@
           Contact Us
         </h3>
         <div class="content">
-          <form name="contact" method="post" netlify data-netlify="true" data-netlify-honeypot="bot-field">
+          <form name="contact" method="post" netlify data-netlify="true">
             <input type="hidden" name="form-name" value="contact">
             <b-field>
               <b-input
                 icon-pack="fas"
                 icon="user"
                 placeholder="Name"
-                type="name"
+                type="text"
                 name="name"
               />
             </b-field>
