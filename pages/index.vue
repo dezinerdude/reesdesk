@@ -353,6 +353,7 @@
         </h3>
         <div class="content">
           <form name="contact" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contact">
             <b-field>
               <b-input
                 icon-pack="fas"
