@@ -24,7 +24,7 @@ const handler = async (event) => {
       to: email,
       from: 'ReesDesk <tim@dezinerdudes.com>',
       subject: "Thank you for contacting Ree's Desk",
-      text: `Hey ${name}!
+      text: `Hey ${name},!
       
       This is just to say we got your message and will be in touch with you shortly!
       
