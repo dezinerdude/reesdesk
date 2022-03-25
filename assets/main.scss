@@ -1,81 +1,81 @@
-@import "~bulma/sass/utilities/_all";
+// @import "~bulma/sass/utilities/_all";
 
-html {
-  scroll-behavior: smooth;
-}
+// html {
+//   scroll-behavior: smooth;
+// }
 $primary: #bd1e2c;
-$primary-light: findLightColor($primary);
-$primary-dark: findDarkColor($primary);
-$primary-invert: findColorInvert($primary);
-$twitter: #4099ff;
-$twitter-invert: findColorInvert($twitter);
+// $primary-light: findLightColor($primary);
+// $primary-dark: findDarkColor($primary);
+// $primary-invert: findColorInvert($primary);
+// $twitter: #4099ff;
+// $twitter-invert: findColorInvert($twitter);
 
-$colors: mergeColorMaps(
-  (
-    "white": (
-      $white,
-      $black,
-    ),
-    "black": (
-      $black,
-      $white,
-    ),
-    "light": (
-      $light,
-      $light-invert,
-    ),
-    "dark": (
-      $dark,
-      $dark-invert,
-    ),
-    "primary": (
-      $primary,
-      $primary-invert,
-      $primary-light,
-      $primary-dark,
-    ),
-    "link": (
-      $link,
-      $link-invert,
-      $link-light,
-      $link-dark,
-    ),
-    "info": (
-      $info,
-      $info-invert,
-      $info-light,
-      $info-dark,
-    ),
-    "success": (
-      $success,
-      $success-invert,
-      $success-light,
-      $success-dark,
-    ),
-    "warning": (
-      $warning,
-      $warning-invert,
-      $warning-light,
-      $warning-dark,
-    ),
-    "danger": (
-      $danger,
-      $danger-invert,
-      $danger-light,
-      $danger-dark,
-    ),
-  ),
-  $custom-colors
-);
+// $colors: mergeColorMaps(
+//   (
+//     "white": (
+//       $white,
+//       $black,
+//     ),
+//     "black": (
+//       $black,
+//       $white,
+//     ),
+//     "light": (
+//       $light,
+//       $light-invert,
+//     ),
+//     "dark": (
+//       $dark,
+//       $dark-invert,
+//     ),
+//     "primary": (
+//       $primary,
+//       $primary-invert,
+//       $primary-light,
+//       $primary-dark,
+//     ),
+//     "link": (
+//       $link,
+//       $link-invert,
+//       $link-light,
+//       $link-dark,
+//     ),
+//     "info": (
+//       $info,
+//       $info-invert,
+//       $info-light,
+//       $info-dark,
+//     ),
+//     "success": (
+//       $success,
+//       $success-invert,
+//       $success-light,
+//       $success-dark,
+//     ),
+//     "warning": (
+//       $warning,
+//       $warning-invert,
+//       $warning-light,
+//       $warning-dark,
+//     ),
+//     "danger": (
+//       $danger,
+//       $danger-invert,
+//       $danger-light,
+//       $danger-dark,
+//     ),
+//   ),
+//   $custom-colors
+// );
 
-// // Links
-$link: $primary;
-$link-invert: $primary-invert;
-$link-focus-border: $primary;
+// // // Links
+// $link: $primary;
+// $link-invert: $primary-invert;
+// $link-focus-border: $primary;
 
-// Fonts
-$family-secondary: "Times New Roman";
+// // Fonts
+// $family-secondary: "Times New Roman";
 
-// // Import Bulma and Buefy styles
-@import "~bulma";
-@import "~buefy/src/scss/buefy";
+// // // Import Bulma and Buefy styles
+// @import "~bulma";
+// @import "~buefy/src/scss/buefy";

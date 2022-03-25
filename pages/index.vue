@@ -19,8 +19,8 @@
                 Your Professional Business Assistant
               </h1>
               <h2 class="subtitle is-4 mt-3 has-text-light">
-                30+ Years of hands-on diverse business experience,<br>
-                hard work and dedication.
+                30+ Years of hands-on diverse business experience,
+                <br>hard work and dedication.
               </h2>
             </div>
           </div>
@@ -188,7 +188,8 @@
               <h3
                 class="subtitle is-4 has-text-primary is-family-secondary is-family-secondary"
               >
-                Property Management Support<br>
+                Property Management Support
+                <br>
                 <span class="subtitle is-6 has-text-primary">(Short-term Rentals)</span>
               </h3>
               <ul>
@@ -263,7 +264,8 @@
             </p>
             <a href="mailto:marie@reesdesk.com">marie@reesdesk.com</a>
             <p>
-              99 St. Jomblo Park,<br>Pekanbaru,<br>28292,<br>Indonesia
+              99 St. Jomblo Park,
+              <br>Pekanbaru, <br>28292, <br>Indonesia
             </p>
           </div>
           <div class="column">
@@ -283,8 +285,9 @@
                       person we all should be so lucky to work with.”
                     </p>
                     <p>
-                      <i>Joe Cerbo, Co-Founder &amp; CEO of Chavez for
-                        Charity</i>
+                      <i>
+                        Joe Cerbo, Co-Founder &amp; CEO of Chavez for Charity
+                      </i>
                     </p>
                   </div>
                 </section>
@@ -293,24 +296,24 @@
                 <section class="hero">
                   <div class="hero-body has-text-centered">
                     <p>
-                      “Upon searching for someone capable of assisting us with
-                      our accounting system we came across Marie. Marie was
+                      “Upon searching for someone capable of assisting us with
+                      our accounting system we came across Marie. Marie was
                       highly recommended to us by a very good friend. At our
-                      first meeting Marie presented herself both as
-                      professional and friendly. It was apparent she was someone
-                      who would be easy to work with and very capable of
-                      handling our work. After the first month of working
-                      together we learned Marie had more to offer than we
-                      expected. She proved to be very efficient and detailed
-                      oriented. She is knowledgeable about all facets of our
-                      business and software programs. Marie has already made
-                      several excellent suggestions which helped make our
-                      information flow more effective.The bonus is Marie&#39;s
-                      positive nature and enjoyable personality.”
+                      first meeting Marie presented herself both as professional
+                      and friendly. It was apparent she was someone who would be
+                      easy to work with and very capable of handling our work.
+                      After the first month of working together we learned Marie
+                      had more to offer than we expected. She proved to be very
+                      efficient and detailed oriented. She is knowledgeable
+                      about all facets of our business and software programs.
+                      Marie has already made several excellent suggestions which
+                      helped make our information flow more effective.The bonus
+                      is Marie&#39;s positive nature and enjoyable personality.”
                     </p>
                     <p>
-                      <i>Arleen Severino, President of Diamond Point
-                        Management</i>
+                      <i>
+                        Arleen Severino, President of Diamond Point Management
+                      </i>
                     </p>
                   </div>
                 </section>
@@ -338,7 +341,14 @@
     </section>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
       <input type="hidden" name="form-name" value="contact">
+      <div hidden aria-hidden="true">
+        <label>
+          Don’t fill this out if you're human:
+          <input name="bot-field">
+        </label>
+      </div>
       <input type="text" name="name">
+      <input type="text" name="number">
       <input type="email" name="email">
       <textarea name="message" />
     </form>
@@ -358,8 +368,23 @@
           Contact Us
         </h3>
         <div class="content">
-          <form name="contact" method="post" netlify data-netlify="true">
-            <input type="hidden" name="form-name" value="contact">
+          <form
+            ref="contactForm"
+            name="contact"
+            method="post"
+            data-netlify="true"
+            class="contact-form"
+            @submit="
+              $event.preventDefault();
+              processForm($event);
+            "
+          >
+            <div hidden aria-hidden="true">
+              <label>
+                Don’t fill this out if you're human:
+                <input name="bot-field">
+              </label>
+            </div>
             <b-field>
               <b-input
                 icon-pack="fas"
@@ -380,6 +405,15 @@
             </b-field>
             <b-field>
               <b-input
+                icon-pack="fas"
+                icon="mobile"
+                placeholder="Contact number"
+                type="text"
+                name="number"
+              />
+            </b-field>
+            <b-field>
+              <b-input
                 maxlength="200"
                 placeholder="Message"
                 type="textarea"
@@ -396,13 +430,7 @@
                 </button>
               </div>
               <div class="control">
-                <button
-                  class="button is-light"
-                  @click="
-                    $event.preventDefault();
-                    toggleModal();
-                  "
-                >
+                <button class="button is-light">
                   Cancel
                 </button>
               </div>
@@ -418,7 +446,8 @@
 export default {
   data () {
     return {
-      isComponentModalActive: false
+      isComponentModalActive: false,
+      contactForm: null
     }
   },
   mounted () {
@@ -431,6 +460,22 @@ export default {
     },
     toggleModal () {
       this.isComponentModalActive = !this.isComponentModalActive
+    },
+    processForm () {
+      const form = this.$refs.contactForm
+      const data = new FormData(form)
+      data.append('form-name', 'contact')
+      fetch('/', {
+        method: 'POST',
+        body: data
+      })
+        .then(() => {
+          form.innerHTML =
+            '<div class="form--success">Thank you so much for your message! We will be in touch shortly.</div>'
+        })
+        .catch((error) => {
+          form.innerHTML = `<div class="form--error">Error: ${error}</div>`
+        })
     }
   }
 }
