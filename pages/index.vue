@@ -12,7 +12,7 @@
                 alt="Ree's Desk Logo"
                 width="350px"
                 class="mb-5"
-              />
+              >
               <h1
                 class="title has-text-light is-2 is-family-secondary has-text-weight-normal"
               >
@@ -20,7 +20,7 @@
               </h1>
               <h2 class="subtitle is-4 mt-3 has-text-light">
                 30+ Years of hands-on diverse business experience,
-                <br />hard work and dedication.
+                <br>hard work and dedication.
               </h2>
             </div>
           </div>
@@ -40,7 +40,7 @@
                 width="120px"
                 height="120px"
                 alt="Banner image 1"
-              />
+              >
               <h2 class="subtitle is-3 mt-4 has-text-white is-family-secondary">
                 Notary
               </h2>
@@ -58,8 +58,10 @@
                 width="120px"
                 height="120px"
                 alt="20 Years"
-              />
-              <h2 class="subtitle is-3 mt-4 is-family-secondary">Experience</h2>
+              >
+              <h2 class="subtitle is-3 mt-4 is-family-secondary">
+                Experience
+              </h2>
               <p>
                 Hands on diverse business experience, Hardwork and Dedication
                 Comprehensive knowledge of office administration, and all
@@ -76,7 +78,7 @@
                 width="120px"
                 height="120px"
                 alt="Woman Owned Business"
-              />
+              >
               <h2 class="subtitle is-3 mt-4 has-text-white is-family-secondary">
                 Woman Owned Business
               </h2>
@@ -110,7 +112,9 @@
 
     <section id="services" class="section">
       <div class="container">
-        <h2 class="title is-2 is-family-secondary">Our Services</h2>
+        <h2 class="title is-2 is-family-secondary">
+          Our Services
+        </h2>
         <div class="columns content mt-5">
           <div class="column">
             <div class="block">
@@ -185,10 +189,8 @@
                 class="subtitle is-4 has-text-primary is-family-secondary is-family-secondary"
               >
                 Property Management Support
-                <br />
-                <span class="subtitle is-6 has-text-primary"
-                  >(Short-term Rentals)</span
-                >
+                <br>
+                <span class="subtitle is-6 has-text-primary">(Short-term Rentals)</span>
               </h3>
               <ul>
                 <li>
@@ -218,7 +220,7 @@
               width="auto"
               style="max-height: 190px; max-width: 250px"
               alt="AMA logo"
-            />
+            >
           </div>
           <div class="column is-one-third">
             <img
@@ -226,7 +228,7 @@
               width="auto"
               style="max-height: 190px; max-width: 250px"
               alt="dezinerDudes logo"
-            />
+            >
           </div>
         </div>
       </div>
@@ -256,12 +258,14 @@
               src="@/assets/logo_dark.png"
               alt="Ree's Desk Logo"
               width="180"
-            />
-            <p class="title is-4 mt-3">(973) 885-3216</p>
+            >
+            <p class="title is-4 mt-3">
+              (973) 885-3216
+            </p>
             <a href="mailto:marie@reesdesk.com">marie@reesdesk.com</a>
             <p>
-              99 St. Jomblo Park,
-              <br />Pekanbaru, <br />28292, <br />Indonesia
+              Morris Plains,
+              <br>New Jersey, <br>07959, <br>USA
             </p>
           </div>
           <div class="column">
@@ -336,16 +340,16 @@
       </div>
     </section>
     <form name="contact" netlify netlify-honeypot="bot-field" hidden>
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="contact">
       <div hidden aria-hidden="true">
         <label>
           Don’t fill this out if you're human:
-          <input name="bot-field" />
+          <input name="bot-field">
         </label>
       </div>
-      <input type="text" name="name" />
-      <input type="text" name="number" />
-      <input type="email" name="email" />
+      <input type="text" name="name">
+      <input type="text" name="number">
+      <input type="email" name="email">
       <textarea name="message" />
     </form>
     <b-modal
@@ -360,7 +364,9 @@
       aria-modal
     >
       <div class="box modal-card">
-        <h3 class="subtitle">Contact Us</h3>
+        <h3 class="subtitle">
+          Contact Us
+        </h3>
         <div class="content">
           <form
             ref="contactForm"
@@ -376,7 +382,7 @@
             <div hidden aria-hidden="true">
               <label>
                 Don’t fill this out if you're human:
-                <input name="bot-field" />
+                <input name="bot-field">
               </label>
             </div>
             <b-field>
@@ -444,41 +450,41 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       isComponentModalActive: false,
-      contactForm: null,
-    };
+      contactForm: null
+    }
   },
-  mounted() {
-    this.addFixedbody();
+  mounted () {
+    this.addFixedbody()
   },
   methods: {
-    addFixedbody() {
-      const body = document.body;
-      body.classList.add("has-navbar-fixed-top");
+    addFixedbody () {
+      const body = document.body
+      body.classList.add('has-navbar-fixed-top')
     },
-    toggleModal() {
-      this.isComponentModalActive = !this.isComponentModalActive;
+    toggleModal () {
+      this.isComponentModalActive = !this.isComponentModalActive
     },
-    processForm() {
-      const form = this.$refs.contactForm;
-      const data = new FormData(form);
-      data.append("form-name", "contact");
-      fetch("/", {
-        method: "POST",
-        body: data,
+    processForm () {
+      const form = this.$refs.contactForm
+      const data = new FormData(form)
+      data.append('form-name', 'contact')
+      fetch('/', {
+        method: 'POST',
+        body: data
       })
         .then(() => {
           form.innerHTML =
-            '<div class="form--success">Thank you so much for your message! We will be in touch shortly.</div>';
+            '<div class="form--success">Thank you so much for your message! We will be in touch shortly.</div>'
         })
         .catch((error) => {
-          form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
-        });
-    },
-  },
-};
+          form.innerHTML = `<div class="form--error">Error: ${error}</div>`
+        })
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 .badges {
